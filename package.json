@@ -26,7 +26,7 @@
     "author": "Kontrolojik LTD",
     "license": "MIT",
     "node-red": {
-        "version": ">=4.0.0",
+        "version": ">=2.0.0",
         "nodes": {
             "relexbox-input": "relexbox.js",
             "relexbox-relay": "relexbox.js",
@@ -40,7 +40,7 @@
         }
     },
     "engines": {
-        "node": ">=22.14.0"
+        "node": "*"
     },
     "dependencies": {
         "net": "^1.0.2"
