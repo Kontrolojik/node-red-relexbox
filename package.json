@@ -21,7 +21,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/Kontrolojik/node-red-relexbox"
+        "url": "git+https://github.com/Kontrolojik/node-red-relexbox.git"
     },
     "author": "Kontrolojik LTD",
     "license": "MIT",
