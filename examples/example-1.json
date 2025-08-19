@@ -1,0 +1,638 @@
+[
+    {
+        "id": "5dd1f5e03359f29f",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "cf0542f2445b2829",
+        "type": "ui-led",
+        "z": "5dd1f5e03359f29f",
+        "name": "Relay-1",
+        "group": "87d7d4cefd20a91a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Relay-1",
+        "labelPlacement": "right",
+        "labelAlignment": "center",
+        "states": [
+            {
+                "value": "false",
+                "valueType": "bool",
+                "color": "#ff0000"
+            },
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#00ff00"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showBorder": true,
+        "showGlow": true,
+        "x": 600,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "23eaabab7a685345",
+        "type": "ui-led",
+        "z": "5dd1f5e03359f29f",
+        "name": "Input-1",
+        "group": "5f2b05df0e5e593c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Input-1",
+        "labelPlacement": "right",
+        "labelAlignment": "center",
+        "states": [
+            {
+                "value": "false",
+                "valueType": "bool",
+                "color": "#ff0000"
+            },
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#00ff00"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showBorder": true,
+        "showGlow": true,
+        "x": 940,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "706e94bcebc4be76",
+        "type": "ui-led",
+        "z": "5dd1f5e03359f29f",
+        "name": "Input-2",
+        "group": "5f2b05df0e5e593c",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Input-2",
+        "labelPlacement": "right",
+        "labelAlignment": "center",
+        "states": [
+            {
+                "value": "false",
+                "valueType": "bool",
+                "color": "#ff0000"
+            },
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#00ff00"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showBorder": true,
+        "showGlow": true,
+        "x": 940,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "5faf3dd9381d4dc3",
+        "type": "ui-led",
+        "z": "5dd1f5e03359f29f",
+        "name": "Input-3",
+        "group": "5f2b05df0e5e593c",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "Input-3",
+        "labelPlacement": "right",
+        "labelAlignment": "center",
+        "states": [
+            {
+                "value": "false",
+                "valueType": "bool",
+                "color": "#ff0000"
+            },
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#00ff00"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showBorder": true,
+        "showGlow": true,
+        "x": 940,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "1c0c1af2757652ab",
+        "type": "ui-led",
+        "z": "5dd1f5e03359f29f",
+        "name": "Input-4",
+        "group": "5f2b05df0e5e593c",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "label": "Input-4",
+        "labelPlacement": "right",
+        "labelAlignment": "center",
+        "states": [
+            {
+                "value": "false",
+                "valueType": "bool",
+                "color": "#ff0000"
+            },
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#00ff00"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showBorder": true,
+        "showGlow": true,
+        "x": 940,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "f537da7b1113e29d",
+        "type": "ui-led",
+        "z": "5dd1f5e03359f29f",
+        "name": "Input-5",
+        "group": "5f2b05df0e5e593c",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "label": "Input-5",
+        "labelPlacement": "right",
+        "labelAlignment": "center",
+        "states": [
+            {
+                "value": "false",
+                "valueType": "bool",
+                "color": "#ff0000"
+            },
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#00ff00"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showBorder": true,
+        "showGlow": true,
+        "x": 940,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "df90f393b0aa80c7",
+        "type": "ui-led",
+        "z": "5dd1f5e03359f29f",
+        "name": "Input-6",
+        "group": "5f2b05df0e5e593c",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "label": "Input-6",
+        "labelPlacement": "right",
+        "labelAlignment": "center",
+        "states": [
+            {
+                "value": "false",
+                "valueType": "bool",
+                "color": "#ff0000"
+            },
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#00ff00"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showBorder": true,
+        "showGlow": true,
+        "x": 940,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "bc1d423f72549da4",
+        "type": "ui-led",
+        "z": "5dd1f5e03359f29f",
+        "name": "Input-7",
+        "group": "5f2b05df0e5e593c",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "label": "Input-7",
+        "labelPlacement": "right",
+        "labelAlignment": "center",
+        "states": [
+            {
+                "value": "false",
+                "valueType": "bool",
+                "color": "#ff0000"
+            },
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#00ff00"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showBorder": true,
+        "showGlow": true,
+        "x": 940,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "536b9b0e39afe9da",
+        "type": "ui-led",
+        "z": "5dd1f5e03359f29f",
+        "name": "Input-8",
+        "group": "5f2b05df0e5e593c",
+        "order": 9,
+        "width": "2",
+        "height": "1",
+        "label": "Input-8",
+        "labelPlacement": "right",
+        "labelAlignment": "center",
+        "states": [
+            {
+                "value": "false",
+                "valueType": "bool",
+                "color": "#ff0000"
+            },
+            {
+                "value": "true",
+                "valueType": "bool",
+                "color": "#00ff00"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showBorder": true,
+        "showGlow": true,
+        "x": 940,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "f964db5153451034",
+        "type": "ui-switch",
+        "z": "5dd1f5e03359f29f",
+        "name": "Relay-1",
+        "label": "Relay-1",
+        "group": "f1ca7d043fca5ebe",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 240,
+        "y": 20,
+        "wires": [
+            [
+                "3ce9ac9761d82d9f"
+            ]
+        ]
+    },
+    {
+        "id": "40f03550b1473bac",
+        "type": "relexbox-input",
+        "z": "5dd1f5e03359f29f",
+        "name": "RelexBox Input-8",
+        "config": "caeed8728b9d0277",
+        "inputIndex": "8",
+        "x": 700,
+        "y": 540,
+        "wires": [
+            [
+                "536b9b0e39afe9da"
+            ]
+        ]
+    },
+    {
+        "id": "3ce9ac9761d82d9f",
+        "type": "relexbox-relay",
+        "z": "5dd1f5e03359f29f",
+        "name": "RELAY-1",
+        "config": "caeed8728b9d0277",
+        "relayIndex": 1,
+        "relayState": false,
+        "x": 400,
+        "y": 20,
+        "wires": [
+            [
+                "cf0542f2445b2829",
+                "f964db5153451034"
+            ]
+        ]
+    },
+    {
+        "id": "abb6d3d7dec05919",
+        "type": "relexbox-relay-toggle",
+        "z": "5dd1f5e03359f29f",
+        "name": "",
+        "config": "caeed8728b9d0277",
+        "relayIndex": 1,
+        "x": 470,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "cd18ba559ee50346",
+        "type": "ui-button",
+        "z": "5dd1f5e03359f29f",
+        "group": "f1ca7d043fca5ebe",
+        "name": "",
+        "label": "Toggle Relay-1",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 240,
+        "y": 100,
+        "wires": [
+            [
+                "abb6d3d7dec05919"
+            ]
+        ]
+    },
+    {
+        "id": "c63ba2de5b0d0639",
+        "type": "relexbox-relay-on",
+        "z": "5dd1f5e03359f29f",
+        "name": "",
+        "config": "caeed8728b9d0277",
+        "relayIndex": 1,
+        "x": 450,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "248ee76309f0eff8",
+        "type": "relexbox-relay-off",
+        "z": "5dd1f5e03359f29f",
+        "name": "",
+        "config": "caeed8728b9d0277",
+        "relayIndex": 1,
+        "x": 450,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "f3fd54be63add0b4",
+        "type": "ui-button",
+        "z": "5dd1f5e03359f29f",
+        "group": "f1ca7d043fca5ebe",
+        "name": "",
+        "label": "Relay-1 ON",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 230,
+        "y": 160,
+        "wires": [
+            [
+                "c63ba2de5b0d0639"
+            ]
+        ]
+    },
+    {
+        "id": "10b595b73a150e7e",
+        "type": "ui-button",
+        "z": "5dd1f5e03359f29f",
+        "group": "f1ca7d043fca5ebe",
+        "name": "",
+        "label": "Relay-1 OFF",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 230,
+        "y": 220,
+        "wires": [
+            [
+                "248ee76309f0eff8"
+            ]
+        ]
+    },
+    {
+        "id": "87d7d4cefd20a91a",
+        "type": "ui-group",
+        "name": "Relays",
+        "page": "d1198ec3d0ebc1ae",
+        "width": 2,
+        "height": "2",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "5f2b05df0e5e593c",
+        "type": "ui-group",
+        "name": "Inputs",
+        "page": "d1198ec3d0ebc1ae",
+        "width": 2,
+        "height": "2",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "f1ca7d043fca5ebe",
+        "type": "ui-group",
+        "name": "Set Relays",
+        "page": "d1198ec3d0ebc1ae",
+        "width": 2,
+        "height": "2",
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "caeed8728b9d0277",
+        "type": "relexbox-config",
+        "name": "RelexBox-119",
+        "host": "172.16.16.104",
+        "port": "13013"
+    },
+    {
+        "id": "d1198ec3d0ebc1ae",
+        "type": "ui-page",
+        "name": "RelexBox",
+        "ui": "1bd24401a5823fd9",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "8db4dd66bdc930cf",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "1bd24401a5823fd9",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": true
+    },
+    {
+        "id": "8db4dd66bdc930cf",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    }
+]

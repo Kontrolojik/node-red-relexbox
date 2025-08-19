@@ -1,0 +1,294 @@
+<script type="text/javascript">
+    RED.nodes.registerType('relexbox-config', {
+        category: 'config',
+        color: '#a6bbcf',
+        defaults: {
+            name: { value: "" },
+            host: { value: "localhost", required: true },
+            port: { value: 8080, required: true, validate: RED.validators.number() }
+        },
+        label: function() {
+            return this.name || "RelexBox Config";
+        }
+    });
+
+    RED.nodes.registerType('relexbox-input', {
+        category: 'relexbox',
+        color: '#a6bbcf',
+        defaults: {
+            name: { value: "" },
+            config: { value: "", type: "relexbox-config", required: true },
+            inputIndex: { value: 1, validate: RED.validators.number(), min: 1, max: 8 }
+        },
+        inputs: 0,
+        outputs: 1,
+        icon: "font-awesome/fa-download",
+        label: function() {
+            return this.name || "RelexBox Input";
+        }
+    });
+
+    RED.nodes.registerType('relexbox-relay', {
+        category: 'relexbox',
+        color: '#a6bbcf',
+        defaults: {
+            name: { value: "" },
+            config: { value: "", type: "relexbox-config", required: true },
+            relayIndex: { value: 1, validate: RED.validators.number(), min: 1, max: 8 },
+            relayState: { value: false }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "font-awesome/fa-toggle-on",
+        label: function() {
+            return this.name || "RelexBox Relay";
+        }
+    });
+
+    RED.nodes.registerType('relexbox-relay-on', {
+        category: 'relexbox',
+        color: '#a6bbcf',
+        defaults: {
+            name: { value: "" },
+            config: { value: "", type: "relexbox-config", required: true },
+            relayIndex: { value: 1, validate: RED.validators.number(), min: 1, max: 8 }
+        },
+        inputs: 1,
+        outputs: 0,
+        icon: "font-awesome/fa-toggle-on",
+        label: function() {
+            return this.name || "RelexBox Relay On";
+        }
+    });
+
+    RED.nodes.registerType('relexbox-relay-off', {
+        category: 'relexbox',
+        color: '#a6bbcf',
+        defaults: {
+            name: { value: "" },
+            config: { value: "", type: "relexbox-config", required: true },
+            relayIndex: { value: 1, validate: RED.validators.number(), min: 1, max: 8 }
+        },
+        inputs: 1,
+        outputs: 0,
+        icon: "font-awesome/fa-toggle-off",
+        label: function() {
+            return this.name || "RelexBox Relay Off";
+        }
+    });
+
+    RED.nodes.registerType('relexbox-relay-toggle', {
+        category: 'relexbox',
+        color: '#a6bbcf',
+        defaults: {
+            name: { value: "" },
+            config: { value: "", type: "relexbox-config", required: true },
+            relayIndex: { value: 1, validate: RED.validators.number(), min: 1, max: 8 }
+        },
+        inputs: 1,
+        outputs: 0,
+        icon: "font-awesome/fa-exchange",
+        label: function() {
+            return this.name || "RelexBox Relay Toggle";
+        }
+    });
+
+    RED.nodes.registerType('relexbox-group-on', {
+        category: 'relexbox',
+        color: '#a6bbcf',
+        defaults: {
+            name: { value: "" },
+            config: { value: "", type: "relexbox-config", required: true },
+            groupIndex: { value: 1, validate: RED.validators.number(), min: 1, max: 4 }
+        },
+        inputs: 1,
+        outputs: 0,
+        icon: "font-awesome/fa-th-large",
+        label: function() {
+            return this.name || "RelexBox Group On";
+        }
+    });
+
+    RED.nodes.registerType('relexbox-group-off', {
+        category: 'relexbox',
+        color: '#a6bbcf',
+        defaults: {
+            name: { value: "" },
+            config: { value: "", type: "relexbox-config", required: true },
+            groupIndex: { value: 1, validate: RED.validators.number(), min: 1, max: 4 }
+        },
+        inputs: 1,
+        outputs: 0,
+        icon: "font-awesome/fa-th",
+        label: function() {
+            return this.name || "RelexBox Group Off";
+        }
+    });
+
+    RED.nodes.registerType('relexbox-preset', {
+        category: 'relexbox',
+        color: '#a6bbcf',
+        defaults: {
+            name: { value: "" },
+            config: { value: "", type: "relexbox-config", required: true },
+            presetIndex: { value: 1, validate: RED.validators.number(), min: 1, max: 16 }
+        },
+        inputs: 1,
+        outputs: 0,
+        icon: "font-awesome/fa-bookmark",
+        label: function() {
+            return this.name || "RelexBox Preset";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="relexbox-config">
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-config-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-host"><i class="fa fa-globe"></i> Host</label>
+        <input type="text" id="node-config-input-host" placeholder="localhost">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-port"><i class="fa fa-plug"></i> Port</label>
+        <input type="number" id="node-config-input-port" placeholder="8080">
+    </div>
+</script>
+
+<script type="text/html" data-template-name="relexbox-input">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-config"><i class="fa fa-cog"></i> Config</label>
+        <input type="text" id="node-input-config">
+    </div>
+    <div class="form-row">
+        <label for="node-input-inputIndex"><i class="fa fa-list"></i> Input Index</label>
+        <input type="number" id="node-input-inputIndex" placeholder="1" min="1" max="8">
+    </div>
+</script>
+
+<script type="text/html" data-template-name="relexbox-relay">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-config"><i class="fa fa-cog"></i> Config</label>
+        <input type="text" id="node-input-config">
+    </div>
+    <div class="form-row">
+        <label for="node-input-relayIndex"><i class="fa fa-list"></i> Relay Index</label>
+        <input type="number" id="node-input-relayIndex" placeholder="1" min="1" max="8">
+    </div>
+    <div class="form-row">
+        <label for="node-input-relayState"><i class="fa fa-power-off"></i> Initial State</label>
+        <input type="checkbox" id="node-input-relayState">
+    </div>
+</script>
+
+<script type="text/html" data-template-name="relexbox-relay-on">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-config"><i class="fa fa-cog"></i> Config</label>
+        <input type="text" id="node-input-config">
+    </div>
+    <div class="form-row">
+        <label for="node-input-relayIndex"><i class="fa fa-list"></i> Relay Index</label>
+        <input type="number" id="node-input-relayIndex" placeholder="1" min="1" max="8">
+    </div>
+</script>
+
+<script type="text/html" data-template-name="relexbox-relay-off">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-config"><i class="fa fa-cog"></i> Config</label>
+        <input type="text" id="node-input-config">
+    </div>
+    <div class="form-row">
+        <label for="node-input-relayIndex"><i class="fa fa-list"></i> Relay Index</label>
+        <input type="number" id="node-input-relayIndex" placeholder="1" min="1" max="8">
+    </div>
+</script>
+
+<script type="text/html" data-template-name="relexbox-relay-toggle">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-config"><i class="fa fa-cog"></i> Config</label>
+        <input type="text" id="node-input-config">
+    </div>
+    <div class="form-row">
+        <label for="node-input-relayIndex"><i class="fa fa-list"></i> Relay Index</label>
+        <input type="number" id="node-input-relayIndex" placeholder="1" min="1" max="8">
+    </div>
+</script>
+
+<script type="text/html" data-template-name="relexbox-group-on">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-config"><i class="fa fa-cog"></i> Config</label>
+        <input type="text" id="node-input-config">
+    </div>
+    <div class="form-row">
+        <label for="node-input-groupIndex"><i class="fa fa-list"></i> Group Index</label>
+        <input type="number" id="node-input-groupIndex" placeholder="1" min="1" max="4">
+    </div>
+</script>
+
+<script type="text/html" data-template-name="relexbox-group-off">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-config"><i class="fa fa-cog"></i> Config</label>
+        <input type="text" id="node-input-config">
+    </div>
+    <div class="form-row">
+        <label for="node-input-groupIndex"><i class="fa fa-list"></i> Group Index</label>
+        <input type="number" id="node-input-groupIndex" placeholder="1" min="1" max="4">
+    </div>
+</script>
+
+<script type="text/html" data-template-name="relexbox-preset">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-config"><i class="fa fa-cog"></i> Config</label>
+        <input type="text" id="node-input-config">
+    </div>
+    <div class="form-row">
+        <label for="node-input-presetIndex"><i class="fa fa-list"></i> Preset Index</label>
+        <input type="number" id="node-input-presetIndex" placeholder="1" min="1" max="16">
+    </div>
+</script>
+
+<script type="text/javascript">
+    $(function() {
+        $('#node-input-mode').on('change', function() {
+            if ($(this).val() === 'write') {
+                $('#node-input-relayState-row').show();
+            } else {
+                $('#node-input-relayState-row').hide();
+            }
+        });
+    });
+</script> 
