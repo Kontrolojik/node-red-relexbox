@@ -12,8 +12,17 @@
         "relay",
         "relays",
         "inputs",
-        "control"
+        "control",
+        "kontrolojik"
     ],
+    "homepage": "https://github.com/Kontrolojik/node-red-relexbox",
+    "bugs": {
+        "url": "https://github.com/Kontrolojik/node-red-relexbox/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Kontrolojik/node-red-relexbox"
+    },
     "author": "Kontrolojik LTD",
     "license": "MIT",
     "node-red": {
@@ -27,7 +36,11 @@
             "relexbox-group-off": "relexbox.js",
             "relexbox-preset": "relexbox.js",
             "relexbox-config": "relexbox.js"
-        }
+        },
+        "version": ">=22.14.0"
+    },
+    "engines": {
+        "node": ">=22.14.0"
     },
     "dependencies": {
         "net": "^1.0.2"

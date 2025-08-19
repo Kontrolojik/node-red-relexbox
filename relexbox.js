@@ -20,9 +20,11 @@ module.exports = function(RED) {
             listeners: new Set(),
             reconnectTimeout: null,
             reconnectAttempts: 0,
-            maxReconnectAttempts: 5,
-            reconnectDelay: 5000,
-
+            maxReconnectAttempts: 60,
+            reconnectDelay: 10000,
+            pingTimeout: null,
+            pingDelay: 55000,
+            
             createClient(config) {
                 if (!config || !config.host || !config.port) {
                     this.notifyListeners('error', new Error("Invalid configuration: host and port are required"));
@@ -44,16 +46,29 @@ module.exports = function(RED) {
 
                 this.client.on('error', (err) => {
                     this.notifyListeners('error', err);
+                    clearInterval(this.pingTimeout);
                     this.attemptReconnect();
                 });
 
                 this.client.on('close', () => {
                     this.notifyListeners('close');
+                    clearInterval(this.pingTimeout);
                     this.attemptReconnect();
                 });
 
                 this.client.on('data', (data) => {
                     this.notifyListeners('data', data);
+                    clearInterval(this.pingTimeout);
+                    this.pingTimeout = setInterval(() => {
+                        try {
+                                const command = `PING\r`;
+                                if (!this.write(command)) {
+                                    node.error("Failed to write command to RelexBox");
+                                }
+                            } catch (error) {
+                                node.error("Error getting initial states: " + error.message);
+                            }
+                    }, this.pingDelay);
                 });
 
                 this.client.setKeepAlive(true, 60000);
@@ -105,6 +120,7 @@ module.exports = function(RED) {
                             } catch (error) {
                                 node.error("Error getting initial states: " + error.message);
                             }
+
                             break;
                         case 'error':
                             node.status({fill:"red", shape:"ring", text:"error"});
@@ -123,6 +139,7 @@ module.exports = function(RED) {
                         case 'data':
                             if (typeof node.handleData === 'function') {
                                 node.handleData(data);
+
                             }
                             break;
                     }
