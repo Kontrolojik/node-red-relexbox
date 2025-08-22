@@ -1,0 +1,33 @@
+<script type="text/javascript">
+    RED.nodes.registerType('relexbox-group-on', {
+        category: 'relexbox',
+        color: '#a6bbcf',
+        defaults: {
+            name: { value: "" },
+            config: { value: "", type: "relexbox-config", required: true },
+            groupIndex: { value: 1, validate: RED.validators.number(), min: 1, max: 4 }
+        },
+        inputs: 1,
+        outputs: 0,
+        icon: "font-awesome/fa-th-large",
+        label: function() {
+            return this.name || "RelexBox Group On";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="relexbox-group-on">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-config"><i class="fa fa-cog"></i> Config</label>
+        <input type="text" id="node-input-config">
+    </div>
+    <div class="form-row">
+        <label for="node-input-groupIndex"><i class="fa fa-list"></i> Group Index</label>
+        <input type="number" id="node-input-groupIndex" placeholder="1" min="1" max="4">
+    </div>
+</script>
+

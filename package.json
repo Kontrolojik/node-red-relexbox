@@ -28,21 +28,20 @@
     "node-red": {
         "version": ">=2.0.0",
         "nodes": {
-            "relexbox-input": "relexbox.js",
-            "relexbox-relay": "relexbox.js",
-            "relexbox-relay-on": "relexbox.js",
-            "relexbox-relay-off": "relexbox.js",
-            "relexbox-relay-toggle": "relexbox.js",
-            "relexbox-group-on": "relexbox.js",
-            "relexbox-group-off": "relexbox.js",
-            "relexbox-preset": "relexbox.js",
-            "relexbox-config": "relexbox.js"
+            "relexbox-config": "relexbox-config.js",
+            "relexbox-input": "relexbox-input.js",
+            "relexbox-relay": "relexbox-relay.js",
+            "relexbox-relay-on": "relexbox-relay-on.js",
+            "relexbox-relay-off": "relexbox-relay-off.js",
+            "relexbox-relay-toggle": "relexbox-relay-toggle.js",
+            "relexbox-group-on": "relexbox-group-on.js",
+            "relexbox-group-off": "relexbox-group-off.js",
+            "relexbox-preset": "relexbox-preset.js"
         }
     },
     "engines": {
-        "node": "*"
+        "node": ">=18.0.0"
     },
     "dependencies": {
-        "net": "^1.0.2"
     }
 }

@@ -40,6 +40,14 @@ module.exports = function(RED) {
                 
                 this.client.on('connect', () => {
                     this.reconnectAttempts = 0;
+                    try {
+                        const command = `::CMD_STAT\n`;
+                        if (!this.write(command)) {
+                            node.error("Failed to write command to RelexBox");
+                        }
+                    } catch (error) {
+                        node.error("Error getting initial states: " + error.message);
+                    }
                     clearTimeout(this.reconnectTimeout);
                     this.notifyListeners('connect');
                 });
@@ -83,6 +91,7 @@ module.exports = function(RED) {
             },
 
             attemptReconnect() {
+                /*
                 if (this.reconnectAttempts < this.maxReconnectAttempts) {
                     this.reconnectAttempts++;
                     this.notifyListeners('reconnecting', this.reconnectAttempts);
@@ -90,6 +99,15 @@ module.exports = function(RED) {
                         this.createClient(this.config);
                     }, this.reconnectDelay);
                 } else {
+                    this.notifyListeners('connectionFailed');
+                }
+                */
+                try {
+                    clearTimeout(this.reconnectTimeout);
+                    this.reconnectTimeout = setTimeout(() => {
+                        this.createClient(this.config);
+                    }, this.reconnectDelay);
+                } catch (error) {
                     this.notifyListeners('connectionFailed');
                 }
             },
@@ -112,15 +130,7 @@ module.exports = function(RED) {
                     switch(event) {
                         case 'connect':
                             node.status({fill:"green", shape:"dot", text:"connected"});
-                            try {
-                                const command = `::CMD_STAT\n`;
-                                if (!this.write(command)) {
-                                    node.error("Failed to write command to RelexBox");
-                                }
-                            } catch (error) {
-                                node.error("Error getting initial states: " + error.message);
-                            }
-
+                            
                             break;
                         case 'error':
                             node.status({fill:"red", shape:"ring", text:"error"});
