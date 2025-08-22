@@ -1,0 +1,215 @@
+[
+    {
+        "id": "fd8b21e34744c990",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3be51844741e9b3b",
+        "type": "debug",
+        "z": "fd8b21e34744c990",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "d131ecf40461c2dd",
+        "type": "relexboxl-relay",
+        "z": "fd8b21e34744c990",
+        "name": "",
+        "config": "f9f6d93026af7e63",
+        "relayIndex": 1,
+        "relayState": false,
+        "x": 480,
+        "y": 180,
+        "wires": [
+            [
+                "3be51844741e9b3b"
+            ]
+        ]
+    },
+    {
+        "id": "a58825934378dbd0",
+        "type": "inject",
+        "z": "fd8b21e34744c990",
+        "name": "ON",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 250,
+        "y": 140,
+        "wires": [
+            [
+                "d131ecf40461c2dd"
+            ]
+        ]
+    },
+    {
+        "id": "2570e676368671b5",
+        "type": "inject",
+        "z": "fd8b21e34744c990",
+        "name": "OFF",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 250,
+        "y": 220,
+        "wires": [
+            [
+                "d131ecf40461c2dd"
+            ]
+        ]
+    },
+    {
+        "id": "5c350118a81dd2b0",
+        "type": "relexboxl-relay-on",
+        "z": "fd8b21e34744c990",
+        "name": "",
+        "config": "f9f6d93026af7e63",
+        "relayIndex": 1,
+        "x": 470,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "8c9e4b497e92dc76",
+        "type": "relexboxl-relay-off",
+        "z": "fd8b21e34744c990",
+        "name": "",
+        "config": "f9f6d93026af7e63",
+        "relayIndex": 1,
+        "x": 470,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "26bc628f3aa28c14",
+        "type": "relexboxl-relay-toggle",
+        "z": "fd8b21e34744c990",
+        "name": "",
+        "config": "f9f6d93026af7e63",
+        "relayIndex": 1,
+        "x": 490,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "dcc947df68789297",
+        "type": "inject",
+        "z": "fd8b21e34744c990",
+        "name": "ON",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 270,
+        "y": 300,
+        "wires": [
+            [
+                "5c350118a81dd2b0"
+            ]
+        ]
+    },
+    {
+        "id": "0839ef368f276412",
+        "type": "inject",
+        "z": "fd8b21e34744c990",
+        "name": "ON",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 270,
+        "y": 360,
+        "wires": [
+            [
+                "8c9e4b497e92dc76"
+            ]
+        ]
+    },
+    {
+        "id": "1aa6f005c8e42344",
+        "type": "inject",
+        "z": "fd8b21e34744c990",
+        "name": "ON",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 270,
+        "y": 420,
+        "wires": [
+            [
+                "26bc628f3aa28c14"
+            ]
+        ]
+    },
+    {
+        "id": "f9f6d93026af7e63",
+        "type": "relexbox-config",
+        "name": "deneme",
+        "host": "172.16.16.109",
+        "port": 13013
+    },
+    {
+        "id": "61c4db692373bce6",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-relexbox": "4.0.0"
+        }
+    }
+]

@@ -1,0 +1,28 @@
+[
+    {
+        "id": "cdc66072ced6f069",
+        "type": "relexboxl-preset",
+        "z": "fd8b21e34744c990",
+        "name": "Relexbox Preset-2",
+        "config": "f9f6d93026af7e63",
+        "presetIndex": "2",
+        "x": 490,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "f9f6d93026af7e63",
+        "type": "relexbox-config",
+        "name": "deneme",
+        "host": "172.16.16.109",
+        "port": 13013
+    },
+    {
+        "id": "583ca735bcc853e9",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-relexbox": "4.0.0"
+        }
+    }
+]

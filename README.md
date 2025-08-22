@@ -30,4 +30,4 @@ This package has several nodes;
 - relexbox-preset
   - Select the preset number for this node, it will let you call state of all relays in the preset.
 
-Example has a Dashboard2.0 flow that uses some of this nodes.
+ExampleS has a flows that uses these nodes.

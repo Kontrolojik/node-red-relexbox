@@ -5,7 +5,7 @@
         defaults: {
             name: { value: "" },
             host: { value: "localhost", required: true },
-            port: { value: 8080, required: true, validate: RED.validators.number() }
+            port: { value: 13013, required: true, validate: RED.validators.number() }
         },
         label: function() {
             return this.name || "RelexBox Config";
@@ -14,7 +14,7 @@
 </script>
 
 <script type="text/html" data-template-name="relexbox-config">
-    <div class="form-row">
+<div class="form-row">
         <label for="node-config-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-config-input-name" placeholder="Name">
     </div>
@@ -27,16 +27,3 @@
         <input type="number" id="node-config-input-port" placeholder="13013">
     </div>
 </script>
-
-
-<script type="text/javascript">
-    $(function() {
-        $('#node-input-mode').on('change', function() {
-            if ($(this).val() === 'write') {
-                $('#node-input-relayState-row').show();
-            } else {
-                $('#node-input-relayState-row').hide();
-            }
-        });
-    });
-</script> 

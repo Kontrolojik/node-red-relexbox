@@ -1,0 +1,56 @@
+[
+    {
+        "id": "fd8b21e34744c990",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ac72724a3ca3b7ea",
+        "type": "relexboxl-input",
+        "z": "fd8b21e34744c990",
+        "name": "",
+        "config": "f9f6d93026af7e63",
+        "inputIndex": 1,
+        "x": 460,
+        "y": 180,
+        "wires": [
+            [
+                "3be51844741e9b3b"
+            ]
+        ]
+    },
+    {
+        "id": "3be51844741e9b3b",
+        "type": "debug",
+        "z": "fd8b21e34744c990",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "f9f6d93026af7e63",
+        "type": "relexbox-config",
+        "name": "deneme",
+        "host": "172.16.16.109",
+        "port": 13013
+    },
+    {
+        "id": "226e108c3636f6cf",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-relexbox": "4.0.0"
+        }
+    }
+]

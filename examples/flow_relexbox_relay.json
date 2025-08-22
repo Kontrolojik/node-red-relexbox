@@ -1,0 +1,107 @@
+[
+    {
+        "id": "fd8b21e34744c990",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3be51844741e9b3b",
+        "type": "debug",
+        "z": "fd8b21e34744c990",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "d131ecf40461c2dd",
+        "type": "relexboxl-relay",
+        "z": "fd8b21e34744c990",
+        "name": "",
+        "config": "f9f6d93026af7e63",
+        "relayIndex": 1,
+        "relayState": false,
+        "x": 480,
+        "y": 180,
+        "wires": [
+            [
+                "3be51844741e9b3b"
+            ]
+        ]
+    },
+    {
+        "id": "a58825934378dbd0",
+        "type": "inject",
+        "z": "fd8b21e34744c990",
+        "name": "ON",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 250,
+        "y": 140,
+        "wires": [
+            [
+                "d131ecf40461c2dd"
+            ]
+        ]
+    },
+    {
+        "id": "2570e676368671b5",
+        "type": "inject",
+        "z": "fd8b21e34744c990",
+        "name": "OFF",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 250,
+        "y": 220,
+        "wires": [
+            [
+                "d131ecf40461c2dd"
+            ]
+        ]
+    },
+    {
+        "id": "f9f6d93026af7e63",
+        "type": "relexbox-config",
+        "name": "deneme",
+        "host": "172.16.16.109",
+        "port": 13013
+    },
+    {
+        "id": "5841dcb88a62d88d",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-relexbox": "4.0.0"
+        }
+    }
+]
