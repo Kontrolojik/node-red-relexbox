@@ -1,6 +1,6 @@
 {
     "name": "@kontrolojik/node-red-relexbox",
-    "version": "2.1.3",
+    "version": "3.0.0",
     "description": "Node-RED nodes for RelexBox relays(8) status-control and inputs(8) status",
     "main": "relexbox.js",
     "scripts": {
@@ -42,6 +42,5 @@
     "engines": {
         "node": ">=18.0.0"
     },
-    "dependencies": {
-    }
+    "dependencies": {}
 }
